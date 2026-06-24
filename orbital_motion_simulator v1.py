@@ -176,7 +176,7 @@ def create_gif(histories, r_earth, output_dir, filename="orbit.gif"):
 if __name__ == "__main__":
 
     # 👉 CHANGE THIS FOLDER TO ANYWHERE YOU WANT
-    output_dir = r"C:\Users\aravi\Desktop\OrbitProjectOutputs"
+    output_dir = 
 
     histories, r_earth = generate_simulations()
 
