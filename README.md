@@ -380,13 +380,15 @@ This modifies orbital geometry and changes eccentricity differently from tangent
 
 <!-- Insert orbit_v3.png below -->
 
-![orbit_v3](images/version3/orbit_v3.png)
+<img width="751" height="790" alt="orbit_v3" src="https://github.com/user-attachments/assets/535c285a-3a01-4d70-acb7-cda26957a952" />
+
 
 ### Animated Orbit
 
 <!-- Insert orbit_v3.gif below -->
 
-![orbit_v3_animation](images/version3/orbit_v3.gif)
+<img width="900" height="900" alt="orbit_v3" src="https://github.com/user-attachments/assets/1bfa80fb-a15d-4cc5-91a5-34221a186657" />
+
 
 ---
 
