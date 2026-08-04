@@ -280,6 +280,157 @@ With propulsion enabled, spacecraft can spiral outward, gain orbital energy, and
 
 ---
 
+# Version 3
+
+## Description
+
+Version 3 transforms the simulator from a propulsion model into a simplified orbital maneuver planning tool.
+
+Rather than only simulating powered flight, the simulator now computes the spacecraft's orbital characteristics throughout the simulation while allowing finite-duration engine burns in multiple directions.
+
+It can analyze how different maneuvers change orbital shape, orbital energy, angular momentum, and long-term trajectory.
+
+---
+
+## New Features
+
+- Keplerian orbital element calculation
+- Specific mechanical energy tracking
+- Specific angular momentum tracking
+- Semi-major axis calculation
+- Eccentricity calculation
+- Periapsis radius calculation
+- Apoapsis radius calculation
+- Orbital period estimation
+- Burn window configuration
+- Multiple thrust directions
+  - Prograde
+  - Retrograde
+  - Radial Out
+  - Radial In
+- Delta-V tracking
+- Remaining Delta-V estimation
+- Live mission telemetry
+- Animated velocity, gravity, and thrust vectors
+- Expanded performance analysis plots
+
+---
+
+## User Inputs
+
+```python
+r_init
+v_init
+
+spacecraft_mass
+fuel_mass
+
+thrust_force
+burn_rate
+throttle
+
+burn_direction
+
+burn_start_time
+burn_end_time
+
+dt
+num_steps
+```
+
+---
+
+## Burn Directions
+
+### Prograde
+
+Engine thrust is applied in the direction of the spacecraft's velocity.
+
+This increases orbital energy and generally raises the orbit.
+
+---
+
+### Retrograde
+
+Engine thrust is applied opposite to the spacecraft's velocity.
+
+This decreases orbital energy and generally lowers the orbit.
+
+---
+
+### Radial Out
+
+Engine thrust is directed away from Earth.
+
+This primarily changes the orbit's shape by increasing eccentricity.
+
+---
+
+### Radial In
+
+Engine thrust is directed toward Earth.
+
+This modifies orbital geometry and changes eccentricity differently from tangential burns.
+
+---
+
+## Version 3 Visualization
+
+### Static Orbit
+
+<!-- Insert orbit_v3.png below -->
+
+![orbit_v3](images/version3/orbit_v3.png)
+
+### Animated Orbit
+
+<!-- Insert orbit_v3.gif below -->
+
+![orbit_v3_animation](images/version3/orbit_v3.gif)
+
+---
+
+## Mission Telemetry
+
+At the end of every simulation, Version 3 automatically computes and reports:
+
+- Orbit Classification
+- Specific Mechanical Energy
+- Specific Angular Momentum
+- Semi-major Axis
+- Eccentricity
+- Periapsis Radius
+- Apoapsis Radius
+- Orbital Period
+- Fuel Consumed
+- Remaining Fuel
+- Final Spacecraft Mass
+- Total Delta-V Produced
+- Remaining Delta-V Capability
+- Total Impulse Delivered
+- Simulation Duration
+
+---
+
+## Additional Outputs
+
+Version 3 generates all Version 2 outputs plus:
+
+```text
+orbit_v3.png
+orbit_v3.gif
+
+delta_v_vs_time.png
+
+angular_momentum_vs_time.png
+
+thrust_acceleration_vs_time.png
+
+grav_acceleration_vs_time.png
+```
+
+These plots allow the spacecraft's orbital evolution, maneuver performance, and propulsion behavior to be analyzed throughout the simulation.
+
 # Numerical Methods
 
 The simulator uses the Euler-Cromer integration method.
@@ -320,6 +471,12 @@ Run Version 2:
 
 ```bash
 python orbital_simulator_v2.py
+```
+
+Run Version 3:
+
+```bash
+python orbital_simulator_v3.py
 ```
 
 Generated outputs will be automatically saved to:
@@ -397,6 +554,13 @@ Planned future improvements include:
 * Mission planning capabilities
 * Interactive graphical interface
 * 3D orbital visualization
+* Adaptive Runge-Kutta integration
+* Atmospheric drag modeling
+* Hohmann transfer maneuvers
+* Orbital rendezvous simulation
+* Three-dimensional orbital mechanics
+* J2 perturbation modeling
+* Multi-body gravitational simulations
 
 ---
 
