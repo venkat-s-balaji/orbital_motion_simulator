@@ -2,7 +2,7 @@
 
 A physics-based spacecraft trajectory simulator developed in Python to explore orbital mechanics, numerical methods, spacecraft propulsion, and fuel consumption.
 
-This project began as a gravity-only orbital mechanics simulator (Version 1) and evolved into a propulsion-enabled spacecraft dynamics simulator (Version 2).
+This project began as a gravity-only orbital mechanics simulator (Version 1), evolved into a propulsion-enabled spacecraft dynamics simulator (Version 2), and was further expanded into an orbital maneuver planning simulator (Version 3) capable of computing orbital elements, modeling finite burns, and analyzing spacecraft maneuvers.
 
 ---
 
@@ -13,6 +13,7 @@ This project began as a gravity-only orbital mechanics simulator (Version 1) and
 * [Physics Background](#physics-background)
 * [Version 1](#version-1)
 * [Version 2](#version-2)
+* [Version 3](#version-3)
 * [Numerical Methods](#numerical-methods)
 * [How to Run](#how-to-run)
 * [Results and Visualizations](#results-and-visualizations)
@@ -49,6 +50,9 @@ This project was created to gain hands-on experience with:
 * Scientific Computing using Python
 * Aerospace Engineering Simulation
 * Engineering Data Visualization
+* Astrodynamics
+* Orbital Maneuver Planning
+* Keplerian Orbit Analysis
 
 ---
 
@@ -118,6 +122,24 @@ Total Energy:
 E = 1/2 mv² - GMm/r
 
 Energy values are reported in normalized units because the simulator uses normalized distances and velocities rather than real-world SI units.
+
+---
+
+Orbital Elements
+
+Version 3 introduces the classical orbital elements used in astrodynamics to describe the size, shape, and geometry of an orbit.
+
+The simulator computes:
+
+* Specific Mechanical Energy
+* Specific Angular Momentum
+* Eccentricity
+* Semi-major Axis
+* Periapsis Radius
+* Apoapsis Radius
+* Orbital Period
+
+It also estimates the spacecraft's available Delta-V using the Tsiolkovsky Rocket Equation.
 
 ---
 
